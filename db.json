@@ -1,0 +1,268 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Mobile"
+        },
+        {
+            "id": 2,
+            "name": "Microwave"
+        },
+        {
+            "id": 3,
+            "name": "TV"
+        },
+        {
+            "id": 4,
+            "name": "Refrg"
+        },
+        {
+            "id": 5,
+            "name": "Shoes"
+        }
+    ],
+    "brands": [
+        {
+            "id": 1,
+            "name": "Nike"
+        },
+        {
+            "id": 2,
+            "name": "Adidas"
+        },
+        {
+            "id": 3,
+            "name": "Samsung"
+        },
+        {
+            "id": 4,
+            "name": "LG"
+        },
+        {
+            "id": 5,
+            "name": "Apple"
+        },
+        {
+            "id": 6,
+            "name": "OnePlus"
+        },
+        {
+            "id": 7,
+            "name": "Vivo"
+        },
+        {
+            "id": 8,
+            "name": "Sony"
+        },
+        {
+            "id": 9,
+            "name": "Panasonic"
+        },
+        {
+            "id": 10,
+            "name": "Puma"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Nike Sneaker",
+            "price": 15000,
+            "rating": 1,
+            "categoryId": 5,
+            "description": "Comfortable and stylish sneakers for everyday wear.",
+            "brandId": 1,
+            "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/t/x/j/-original-imaghrbytengjbnu.jpeg?q=70"
+        },
+        {
+            "id": 2,
+            "name": "Adidas Sports",
+            "price": 2000,
+            "rating": 2,
+            "categoryId": 2,
+            "description": "High-performance sports shoes for athletes.",
+            "brandId": 2,
+            "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/f/q/h/-original-imagtajhaycgvexy.jpeg?q=70"
+        },
+        {
+            "id": 3,
+            "name": "Samsung 40",
+            "price": 5000,
+            "rating": 3.5,
+            "categoryId": 3,
+            "description": "40-inch Samsung TV with vibrant display.",
+            "brandId": 3,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/television/x/8/a/-original-imagttjpuyzsbzud.jpeg?q=70"
+        },
+        {
+            "id": 4,
+            "name": "LG Refrigerator",
+            "price": 10000,
+            "rating": 4,
+            "categoryId": 4,
+            "description": "Spacious and energy-efficient refrigerator.",
+            "brandId": 4,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/refrigerator-new/t/m/c/-original-imagx6h6jvd9hy4y.jpeg?q=70"
+        },
+        {
+            "id": 5,
+            "name": "Iphone 14",
+            "price": 100000,
+            "rating": 5,
+            "categoryId": 1,
+            "description": "Latest Apple iPhone with advanced features.",
+            "brandId": 5,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/b/0/-original-imaghx9qnhzxegu2.jpeg?q=70"
+        },
+        {
+            "id": 6,
+            "name": "OnePlus 9",
+            "price": 10000,
+            "rating": 2,
+            "categoryId": 1,
+            "description": "OnePlus smartphone with fast performance.",
+            "brandId": 6,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/l/7/i/-original-imaggceejthk79fq.jpeg?q=70"
+        },
+        {
+            "id": 7,
+            "name": "Vivo 10",
+            "price": 10000,
+            "rating": 3,
+            "categoryId": 1,
+            "description": "Vivo smartphone with excellent camera.",
+            "brandId": 7,
+            "image": "https://rukminim2.flixcart.com/image/312/312/kjlrb0w0/mobile/t/3/f/vivo-y20a-v2052-original-imafz4z8egkegqf7.jpeg?q=70"
+        },
+        {
+            "id": 8,
+            "name": "Samsung Galaxy S21",
+            "price": 10000,
+            "rating": 4,
+            "categoryId": 1,
+            "description": "Samsung Galaxy with top-notch features.",
+            "brandId": 3,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/d/o/c/-original-imagtnqjmfqxxbj2.jpeg?q=70"
+        },
+        {
+            "id": 9,
+            "name": "Sony Bravia 50",
+            "price": 25000,
+            "rating": 4.5,
+            "categoryId": 3,
+            "description": "50-inch Sony Bravia with stunning visuals.",
+            "brandId": 8,
+            "image": "https://rukminim2.flixcart.com/image/312/312/kt39jm80/television/8/a/s/kd-50x75-sony-original-imag6ggfbacxgnkw.jpeg?q=70"
+        },
+        {
+            "id": 10,
+            "name": "Panasonic Microwave",
+            "price": 8000,
+            "rating": 4.2,
+            "categoryId": 2,
+            "description": "Efficient Panasonic microwave with quick cooking.",
+            "brandId": 9,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/microwave-new/y/t/t/-original-imagqkfykrwhpfqs.jpeg?q=70"
+        },
+        {
+            "id": 11,
+            "name": "Puma Running Shoes",
+            "price": 3000,
+            "rating": 3.8,
+            "categoryId": 5,
+            "description": "Durable running shoes from Puma.",
+            "brandId": 10,
+            "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/h/6/p/-original-imagtbteu3rndhyt.jpeg?q=70"
+        },
+        {
+            "id": 12,
+            "name": "Apple MacBook Air",
+            "price": 95000,
+            "rating": 4.8,
+            "categoryId": 1,
+            "description": "Lightweight and powerful MacBook Air.",
+            "brandId": 5,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/2/v/v/-original-imagfdeqter4sj2j.jpeg?q=70"
+        },
+        {
+            "id": 13,
+            "name": "Nike Air Max",
+            "price": 12000,
+            "rating": 4.3,
+            "categoryId": 5,
+            "description": "Nike Air Max with superior cushioning.",
+            "brandId": 1,
+            "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/a/x/c/-original-imagzswbhfnvwqpd.jpeg?q=70"
+        },
+        {
+            "id": 14,
+            "name": "Adidas Running Shoes",
+            "price": 6000,
+            "rating": 4,
+            "categoryId": 5,
+            "description": "Comfortable and breathable running shoes.",
+            "brandId": 2,
+            "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/r/d/q/-original-imagya7hkzxhryx7.jpeg?q=70"
+        },
+        {
+            "id": 15,
+            "name": "Sony Headphones",
+            "price": 5000,
+            "rating": 4.5,
+            "categoryId": 1,
+            "description": "Noise-cancelling headphones from Sony.",
+            "brandId": 8,
+            "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/t/t/y/-original-imahfgfkzgfhkrzh.jpeg?q=70"
+        },
+        {
+            "id": 16,
+            "name": "LG Smart TV",
+            "price": 30000,
+            "rating": 4.7,
+            "categoryId": 3,
+            "description": "Smart TV from LG with 4K resolution.",
+            "brandId": 4,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/television/n/r/r/-original-imagzrrjge4guafs.jpeg?q=70"
+        },
+        {
+            "id": 17,
+            "name": "Samsung Microwave",
+            "price": 7000,
+            "rating": 4.3,
+            "categoryId": 2,
+            "description": "Samsung microwave with auto-cook features.",
+            "brandId": 3,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/microwave-new/u/u/c/-original-imagqkfyjr5pazah.jpeg?q=70"
+        },
+        {
+            "id": 18,
+            "name": "OnePlus Nord",
+            "price": 25000,
+            "rating": 4.1,
+            "categoryId": 1,
+            "description": "Affordable OnePlus smartphone with great features.",
+            "brandId": 6,
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/p/r/b/nord-ce-3-lite-5g-ce2099-oneplus-original-imagzj42cctpjjze.jpeg?q=70"
+        },
+        {
+            "id": 19,
+            "name": "Vivo Y20",
+            "price": 15000,
+            "rating": 3.9,
+            "categoryId": 1,
+            "description": "Vivo smartphone with a large battery.",
+            "brandId": 7,
+            "image": "https://rukminim2.flixcart.com/image/312/312/kjlrb0w0/mobile/t/3/f/vivo-y20a-v2052-original-imafz4z8egkegqf7.jpeg?q=70"
+        },
+        {
+            "id": 20,
+            "name": "Nike Running Shoes",
+            "price": 7000,
+            "rating": 4.6,
+            "categoryId": 5,
+            "description": "Lightweight and durable running shoes.",
+            "brandId": 1,
+            "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/x/k/3/-original-imagsuvne32jawqr.jpeg?q=70"
+        }
+    ]
+}

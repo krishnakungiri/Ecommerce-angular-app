@@ -1,0 +1,6 @@
+<div class="body-container">
+    <app-left-sidebar class="left-sidebar"></app-left-sidebar>
+    <div class="product-list">
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+    </div>
+</div>

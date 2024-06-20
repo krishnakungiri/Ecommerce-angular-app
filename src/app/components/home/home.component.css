@@ -1,0 +1,23 @@
+.body-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.left-sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.product-list {
+    flex: 1;
+    /* Take remaining space */
+    padding: 20px;
+    /* Additional styling for product list */
+    background-color: #f2f3f3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* justify-content: space-around; */
+}
