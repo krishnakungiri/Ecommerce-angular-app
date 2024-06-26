@@ -1,0 +1,14 @@
+<!-- <div class="filter-section"> -->
+<div>
+    <h4>Brand</h4>
+    <div class="search-box">
+        <input type="text" [formControl]="searchControl" placeholder="Search brands">
+    </div>
+    <div class="brands-list">
+        <div *ngFor="let brand of filteredBrands" class="brand-item">
+            <input type="checkbox" [checked]="isSelected(brand.name)" (change)="toggleBrandSelection(brand)">
+            <label>{{ brand.name }}</label>
+        </div>
+    </div>
+</div>
+<!-- </div> -->

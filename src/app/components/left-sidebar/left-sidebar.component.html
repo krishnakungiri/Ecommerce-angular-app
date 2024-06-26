@@ -1,1 +1,6 @@
-<div class="body"></div>
+<div class="filter-section">
+    <h3>Filters</h3>
+
+    <app-multiselect-dropdown [brands]="brands"
+        (selectedBrandsChange)="onBrandChange($event)"></app-multiselect-dropdown>
+</div>

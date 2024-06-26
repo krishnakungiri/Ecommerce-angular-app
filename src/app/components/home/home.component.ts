@@ -3,6 +3,7 @@ import { LeftSidebarComponent } from "../left-sidebar/left-sidebar.component";
 import { ProductCardComponent } from "./product-card/product-card.component";
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
+import { FiltersData } from '../../models/products-data'
 
 @Component({
   selector: 'app-home',
@@ -21,5 +22,10 @@ export class HomeComponent implements OnInit {
     this.dataService.getProducts().subscribe(data => {
       this.products = data;
     });
+
+    this.dataService.filtersData.subscribe((data: FiltersData) => {
+      console.log("data::", data);
+
+    })
   }
 }

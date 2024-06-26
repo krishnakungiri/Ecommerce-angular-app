@@ -1,0 +1,28 @@
+.filter-section {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.search-box {
+    margin-bottom: 16px;
+}
+
+.brands-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.brand-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.brand-item input[type="checkbox"] {
+    margin-right: 8px;
+}
