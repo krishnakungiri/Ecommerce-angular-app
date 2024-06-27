@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Brand } from '../../models/products-data';
+import { Brand } from '../../models/products-data.interface';
 
 @Component({
   selector: 'app-multiselect-dropdown',
@@ -10,14 +10,19 @@ import { Brand } from '../../models/products-data';
   templateUrl: './multiselect-dropdown.component.html',
   styleUrl: './multiselect-dropdown.component.css'
 })
-export class MultiselectDropdownComponent implements OnInit {
-  @Input() brands: { name: string, count: number }[] = [];
+export class MultiselectDropdownComponent implements OnInit, OnChanges {
+  @Input() brands: Brand[] = [];
   @Output() selectedBrandsChange = new EventEmitter<Brand[]>();
 
   searchControl = new FormControl('');
   selectedBrands: Brand[] = [];
-  filteredBrands = this.brands;
+  filteredBrands: any
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.brands.length > 0) {
+      this.filteredBrands = this.brands;
+    }
+  }
   ngOnInit() {
     this.searchControl.valueChanges.subscribe((value: any) => {
       this.filterBrands(value);
@@ -26,12 +31,9 @@ export class MultiselectDropdownComponent implements OnInit {
 
   filterBrands(value: string) {
     this.filteredBrands = this.brands.filter(brand => brand.name.toLowerCase().includes(value.toLowerCase()));
-    console.log("filterbrands value:", this.filteredBrands);
   }
 
   toggleBrandSelection(brand: any) {
-    console.log("brand --:", brand);
-
     const index = this.selectedBrands.indexOf(brand);
     if (index > -1) {
       this.selectedBrands.splice(index, 1);
@@ -39,13 +41,20 @@ export class MultiselectDropdownComponent implements OnInit {
       this.selectedBrands.push(brand);
     }
 
-    this.selectedBrandsChange.emit(this.selectedBrands)
+    if (this.selectedBrands.length > 0) {
+      this.selectedBrandsChange.emit(this.selectedBrands)
+    } else {
+      this.selectedBrandsChange.emit
+    }
   }
 
   isSelected(brand: string): boolean {
-    console.log(brand);
+    const index = this.selectedBrands.findIndex(value => value.name === brand)
+    return index === -1 ? false : true
+  }
 
-    return true
-    // return this.selectedBrands.includes();
+  clearSearch() {
+    this.searchControl.reset();
+    this.filterBrands('');
   }
 }

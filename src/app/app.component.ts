@@ -27,41 +27,41 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'Ecommerce-app';
 
-  brands = [
-    { name: 'HIGHLANDER', count: 2842 },
-    { name: 'Indian Terrain', count: 2804 },
-    { name: 'Snitch', count: 2491 },
-    { name: 'Louis Philippe Sport', count: 2208 },
-    { name: 'U.S. Polo Assn.', count: 2073 },
-    { name: 'SHOWOFF', count: 2069 },
-    { name: 'Roadster', count: 2043 },
-    { name: 'Mufti', count: 2030 }
-  ];
+  // brands = [
+  //   { name: 'HIGHLANDER', count: 2842 },
+  //   { name: 'Indian Terrain', count: 2804 },
+  //   { name: 'Snitch', count: 2491 },
+  //   { name: 'Louis Philippe Sport', count: 2208 },
+  //   { name: 'U.S. Polo Assn.', count: 2073 },
+  //   { name: 'SHOWOFF', count: 2069 },
+  //   { name: 'Roadster', count: 2043 },
+  //   { name: 'Mufti', count: 2030 }
+  // ];
 
-  searchControl = new FormControl('');
-  selectedBrands: string[] = [];
-  filteredBrands = this.brands;
+  // searchControl = new FormControl('');
+  // selectedBrands: string[] = [];
+  // filteredBrands = this.brands;
 
-  ngOnInit() {
-    this.searchControl.valueChanges.subscribe((value: any) => {
-      this.filterBrands(value);
-    });
-  }
+  // ngOnInit() {
+  //   this.searchControl.valueChanges.subscribe((value: any) => {
+  //     this.filterBrands(value);
+  //   });
+  // }
 
-  filterBrands(value: string) {
-    this.filteredBrands = this.brands.filter(brand => brand.name.toLowerCase().includes(value.toLowerCase()));
-  }
+  // filterBrands(value: string) {
+  //   this.filteredBrands = this.brands.filter(brand => brand.name.toLowerCase().includes(value.toLowerCase()));
+  // }
 
-  toggleBrandSelection(brand: string) {
-    const index = this.selectedBrands.indexOf(brand);
-    if (index > -1) {
-      this.selectedBrands.splice(index, 1);
-    } else {
-      this.selectedBrands.push(brand);
-    }
-  }
+  // toggleBrandSelection(brand: string) {
+  //   const index = this.selectedBrands.indexOf(brand);
+  //   if (index > -1) {
+  //     this.selectedBrands.splice(index, 1);
+  //   } else {
+  //     this.selectedBrands.push(brand);
+  //   }
+  // }
 
-  isSelected(brand: string): boolean {
-    return this.selectedBrands.includes(brand);
-  }
+  // isSelected(brand: string): boolean {
+  //   return this.selectedBrands.includes(brand);
+  // }
 }

@@ -22,9 +22,5 @@ export class LeftSidebarComponent implements OnInit {
 
   onBrandChange(brands: any) {
     this.dataService.filtersData.next({ brands })
-
-    console.log("event :", brands);
-
-
   }
 }

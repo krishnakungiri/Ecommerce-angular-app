@@ -1,12 +1,13 @@
-.filter-section {
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 16px 0;
+.search-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
 }
 
-.search-box {
-    margin-bottom: 16px;
+.search-box input {
+    width: 80%;
+    margin-right: 5%;
 }
 
 .brands-list {
