@@ -21,5 +21,9 @@ export class DataService {
     return this.http.get(`${this.apiUrl}/brands`);
   }
 
+  getCategories(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/categories`)
+  }
+
 
 }

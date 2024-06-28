@@ -16,13 +16,14 @@ export class MultiselectDropdownComponent implements OnInit, OnChanges {
 
   searchControl = new FormControl('');
   selectedBrands: Brand[] = [];
-  filteredBrands: any
+  filteredBrands!: Brand[]
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.brands.length > 0) {
+    if (this.brands?.length > 0) {
       this.filteredBrands = this.brands;
     }
   }
+
   ngOnInit() {
     this.searchControl.valueChanges.subscribe((value: any) => {
       this.filterBrands(value);
@@ -30,7 +31,9 @@ export class MultiselectDropdownComponent implements OnInit, OnChanges {
   }
 
   filterBrands(value: string) {
-    this.filteredBrands = this.brands.filter(brand => brand.name.toLowerCase().includes(value.toLowerCase()));
+    console.log("Value :", value);
+
+    this.filteredBrands = this.brands.filter(brand => brand.name.toLowerCase().includes(value ? value.toLowerCase() : ''));
   }
 
   toggleBrandSelection(brand: any) {
@@ -41,11 +44,7 @@ export class MultiselectDropdownComponent implements OnInit, OnChanges {
       this.selectedBrands.push(brand);
     }
 
-    if (this.selectedBrands.length > 0) {
-      this.selectedBrandsChange.emit(this.selectedBrands)
-    } else {
-      this.selectedBrandsChange.emit
-    }
+    this.selectedBrandsChange.emit(this.selectedBrands.length ? this.selectedBrands : [])
   }
 
   isSelected(brand: string): boolean {
@@ -55,6 +54,5 @@ export class MultiselectDropdownComponent implements OnInit, OnChanges {
 
   clearSearch() {
     this.searchControl.reset();
-    this.filterBrands('');
   }
 }

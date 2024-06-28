@@ -1,9 +1,10 @@
 <nav>
     <ul>
-        <li>Mobile</li>
+        <li *ngFor=" let category of categories" (click)="selectItem(category)">{{category.name}}</li>
+        <!-- <li>Mobile</li>
         <li>Microwave</li>
         <li>TV</li>
         <li>Refrg</li>
-        <li>Shoes</li>
+        <li>Shoes</li> -->
     </ul>
 </nav>

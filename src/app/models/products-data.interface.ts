@@ -1,10 +1,15 @@
 export interface Brand {
-    id: number,
-    name: string
+    id: number;
+    name: string;
+}
+
+export interface Category extends Brand {
+
 }
 
 export interface FiltersData {
-    brands: Brand[]
+    brands?: Brand[];
+    category?: Category;
 }
 
 export interface Product {
