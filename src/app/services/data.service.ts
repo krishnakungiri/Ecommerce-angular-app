@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { FiltersData } from '../models/products-data.interface';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Category, FiltersData } from '../models/products-data.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ import { FiltersData } from '../models/products-data.interface';
 export class DataService {
   private apiUrl = 'http://localhost:3000';
 
-  public filtersData = new Subject<FiltersData>;
+  public filtersData$ = new Subject<FiltersData>;
+  public categoryBrandsBehSubject$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
 
   constructor(private http: HttpClient) { }
 
@@ -24,6 +25,4 @@ export class DataService {
   getCategories(): Observable<any> {
     return this.http.get(`${this.apiUrl}/categories`)
   }
-
-
 }

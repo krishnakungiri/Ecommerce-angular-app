@@ -4,7 +4,7 @@ export interface Brand {
 }
 
 export interface Category extends Brand {
-
+    brands: number[]
 }
 
 export interface FiltersData {

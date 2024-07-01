@@ -14,9 +14,7 @@ export class TopMenuComponent implements OnInit {
 
   categories!: Category[]
 
-  constructor(private dataService: DataService) {
-
-  }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getCategories().subscribe((data) => {
@@ -25,7 +23,7 @@ export class TopMenuComponent implements OnInit {
   }
 
   selectItem(item: Category) {
-    console.log(item);
-    this.dataService.filtersData.next({ category: item })
+    this.dataService.categoryBrandsBehSubject$.next(item.brands);
+    this.dataService.filtersData$.next({ category: item })
   }
 }

@@ -1,24 +1,56 @@
 {
     "categories": [
         {
+            "id": 0,
+            "name": "All",
+            "brands": []
+        },
+        {
             "id": 1,
-            "name": "Mobile"
+            "name": "Mobile",
+            "brands": [
+                3,
+                5,
+                6,
+                7
+            ]
         },
         {
             "id": 2,
-            "name": "Microwave"
+            "name": "Microwave",
+            "brands": [
+                3,
+                4,
+                9
+            ]
         },
         {
             "id": 3,
-            "name": "TV"
+            "name": "TV",
+            "brands": [
+                3,
+                4,
+                8,
+                9
+            ]
         },
         {
             "id": 4,
-            "name": "Refrg"
+            "name": "Refrg",
+            "brands": [
+                3,
+                4,
+                9
+            ]
         },
         {
             "id": 5,
-            "name": "Shoes"
+            "name": "Shoes",
+            "brands": [
+                1,
+                2,
+                10
+            ]
         }
     ],
     "brands": [

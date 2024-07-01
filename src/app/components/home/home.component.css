@@ -12,12 +12,9 @@
 
 .product-list {
     flex: 1;
-    /* Take remaining space */
     padding: 20px;
-    /* Additional styling for product list */
     background-color: #f2f3f3;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    /* justify-content: space-around; */
+    gap: 5px;
 }

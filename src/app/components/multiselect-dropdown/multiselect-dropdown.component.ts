@@ -31,8 +31,6 @@ export class MultiselectDropdownComponent implements OnInit, OnChanges {
   }
 
   filterBrands(value: string) {
-    console.log("Value :", value);
-
     this.filteredBrands = this.brands.filter(brand => brand.name.toLowerCase().includes(value ? value.toLowerCase() : ''));
   }
 
