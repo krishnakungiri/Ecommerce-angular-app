@@ -18,3 +18,21 @@
     flex-wrap: wrap;
     gap: 5px;
 }
+
+.no-products {
+    flex: 1;
+    padding: 20px;
+    background-color: #f2f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.no-products strong {
+    border: 3px solid #339dbd;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    align-content: center;
+}

@@ -37,13 +37,14 @@ export class HomeComponent implements OnInit {
     this.dataService.filtersData$.subscribe((data: FiltersData) => {
       this.filteredProducts = this.getFilteredProducts(data)
 
-      if (!this.filteredProducts?.length) this.filteredProducts = this.products
+      // if (!this.filteredProducts?.length) this.filteredProducts = this.products
     }, (error) => {
       alert('Failed to subscribe filter' + error)
     })
   }
 
-  getFilteredProducts(filters: FiltersData): any {
+  getFilteredProducts(filters: FiltersData): Product[] {
+    const { category, brands, price, rating } = filters
     if (filters.category) {
       return this.products.filter((product: Product): any => {
         if (product.categoryId == filters.category?.id) {
@@ -56,6 +57,16 @@ export class HomeComponent implements OnInit {
         return filters.brands?.some((brand: any) => brand.id == product.brandId);
       });
     }
+
+    if (filters.rating) {
+      let rating = Math.floor(filters.rating);
+      return this.products.filter((product: Product) => Math.floor(product.rating) == rating)
+    }
+
+    if (price?.length) {
+      return this.products.filter((product: Product) => product.price > price[0] && product.price < price[1])
+    }
+    return this.products
 
   }
 }

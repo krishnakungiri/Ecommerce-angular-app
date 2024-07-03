@@ -13,6 +13,7 @@ import { Category } from '../../models/products-data.interface';
 export class TopMenuComponent implements OnInit {
 
   categories!: Category[]
+  selectedCategory!: Category
 
   constructor(private dataService: DataService) { }
 
@@ -23,7 +24,12 @@ export class TopMenuComponent implements OnInit {
   }
 
   selectItem(item: Category) {
+    this.selectedCategory = item
     this.dataService.categoryBrandsBehSubject$.next(item.brands);
     this.dataService.filtersData$.next({ category: item })
+  }
+
+  isSelected(category: Category): boolean {
+    return this.selectedCategory === category
   }
 }

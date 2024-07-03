@@ -1,5 +1,7 @@
 <nav>
     <ul>
-        <li *ngFor=" let category of categories" (click)="selectItem(category)">{{category.name}}</li>
+        <li *ngFor=" let category of categories" [ngClass]="{'my_class': isSelected(category)}"
+            (click)="selectItem(category)">
+            {{category.name}}</li>
     </ul>
 </nav>

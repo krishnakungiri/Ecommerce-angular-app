@@ -1,0 +1,9 @@
+<div>
+    <h4>Rating</h4>
+    <div class="rating-box">
+        <div *ngFor="let rating of ratings" [ngClass]="{'onSelectStyle': isSelected(rating)}"
+            (click)="selectRating(rating)">{{rating}}
+            <i class=" fa-solid fa-star fs-sm"></i>
+        </div>
+    </div>
+</div>

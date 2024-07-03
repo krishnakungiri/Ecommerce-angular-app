@@ -1,0 +1,24 @@
+.rating-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+}
+
+.rating-box div {
+    border-right: 1px solid #ccc;
+    padding: 5px;
+}
+
+.rating-box div:last-child {
+    border-right: none;
+}
+
+.rating-box div:hover {
+    background-color: #339dbd;
+    cursor: pointer;
+}
+
+.onSelectStyle {
+    background-color: #339dbd;
+}

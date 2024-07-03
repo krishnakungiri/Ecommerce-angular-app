@@ -1,6 +1,13 @@
 <div class="body-container">
     <app-left-sidebar class="left-sidebar"></app-left-sidebar>
-    <div class="product-list">
-        <app-product-card *ngFor="let product of filteredProducts" [product]="product"></app-product-card>
-    </div>
+    <ng-container *ngIf="filteredProducts.length else noProducts">
+        <div class="product-list">
+            <app-product-card *ngFor="let product of filteredProducts" [product]="product"></app-product-card>
+        </div>
+    </ng-container>
+    <ng-template #noProducts>
+        <div class="no-products" *ngIf="!filteredProducts.length">
+            <strong>No Products Found</strong>
+        </div>
+    </ng-template>
 </div>

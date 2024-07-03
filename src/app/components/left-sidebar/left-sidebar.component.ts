@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { MultiselectDropdownComponent } from '../multiselect-dropdown/multiselect-dropdown.component';
+import { MultiselectDropdownComponent } from './multiselect-dropdown/multiselect-dropdown.component';
 import { DataService } from '../../services/data.service';
 import { Brand } from '../../models/products-data.interface';
 import { Observable, filter, map, toArray } from 'rxjs';
+import { RatingFilterComponent } from './rating-filter/rating-filter.component';
+import { PriceFilterComponent } from './price-filter/price-filter.component';
 
 @Component({
   selector: 'app-left-sidebar',
   standalone: true,
-  imports: [MultiselectDropdownComponent],
+  imports: [MultiselectDropdownComponent, RatingFilterComponent, PriceFilterComponent],
   templateUrl: './left-sidebar.component.html',
   styleUrl: './left-sidebar.component.css'
 })
@@ -41,7 +43,11 @@ export class LeftSidebarComponent implements OnInit {
     })
   }
 
-  onBrandChange(brands: any) {
-    this.dataService.filtersData$.next({ brands })
+  onBrandChangeHandler(brands: any) {
+    this.dataService.filtersData$.next({ brands });
+  }
+
+  onRatingChangeHandler(rating: any) {
+    this.dataService.filtersData$.next({ rating });
   }
 }

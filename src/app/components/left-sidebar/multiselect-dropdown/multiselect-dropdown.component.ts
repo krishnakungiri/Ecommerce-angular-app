@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Brand } from '../../models/products-data.interface';
+import { Brand } from '../../../models/products-data.interface';
 
 @Component({
   selector: 'app-multiselect-dropdown',

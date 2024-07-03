@@ -10,6 +10,8 @@ export interface Category extends Brand {
 export interface FiltersData {
     brands?: Brand[];
     category?: Category;
+    rating?: number;
+    price?: [number, number]
 }
 
 export interface Product {

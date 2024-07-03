@@ -23,6 +23,6 @@ export class DataService {
   }
 
   getCategories(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/categories`)
+    return this.http.get(`${this.apiUrl}/categories`);
   }
 }

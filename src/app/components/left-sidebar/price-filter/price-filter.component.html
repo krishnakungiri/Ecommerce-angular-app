@@ -1,0 +1,21 @@
+<div>
+    <h4>Price Range</h4>
+    <div class="price-box">
+        <!-- <h2>Select Price Range:</h2>
+        <label for="minPrice">Min Price: {{ selectedMinPrice }}</label>
+        <input type="range" id="minPrice" [(ngModel)]="selectedMinPrice" [min]="minPrice" [max]="maxPrice"
+            (input)="onMinPriceChange(selectedMinPrice)">
+        <br>
+        <label for="maxPrice">Max Price: {{ selectedMaxPrice }}</label>
+        <input type="range" id="maxPrice" [(ngModel)]="selectedMaxPrice" [min]="minPrice" [max]="maxPrice"
+            (input)="onMaxPriceChange(selectedMaxPrice)">
+        <br>
+        <p>Selected Price Range: {{ selectedMinPrice }} - {{ selectedMaxPrice }}</p> -->
+    </div>
+
+    <div class="price-box">
+        <input type="number" [(ngModel)]="priceMinValue">
+        <input type="number" [(ngModel)]="priceMaxValue">
+        <button (click)="onPriceChange()">Apply</button>
+    </div>
+</div>

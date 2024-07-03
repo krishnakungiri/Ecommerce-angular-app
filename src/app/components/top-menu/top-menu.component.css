@@ -25,3 +25,9 @@ li:hover {
     background-color: #beb6b6;
     cursor: pointer;
 }
+
+.my_class {
+    /* background-color: #f2f3f3 */
+    background-color: #beb6b6;
+    ;
+}

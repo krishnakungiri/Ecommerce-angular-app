@@ -1,5 +1,8 @@
 <div class="filter-section">
     <h3>Filters</h3>
     <app-multiselect-dropdown [brands]="allbrands"
-        (selectedBrandsChange)="onBrandChange($event)"></app-multiselect-dropdown>
+        (selectedBrandsChange)="onBrandChangeHandler($event)"></app-multiselect-dropdown>
+
+    <app-rating-filter (ratingChange)="onRatingChangeHandler($event)"></app-rating-filter>
+    <app-price-filter></app-price-filter>
 </div>
