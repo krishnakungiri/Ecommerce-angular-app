@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     this.dataService.filtersData$.subscribe((data: FiltersData) => {
       this.filteredProducts = this.getFilteredProducts(data)
 
-      // if (!this.filteredProducts?.length) this.filteredProducts = this.products
+      if (!this.filteredProducts?.length && data.category) this.filteredProducts = this.products
     }, (error) => {
       alert('Failed to subscribe filter' + error)
     })
