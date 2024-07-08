@@ -26,7 +26,7 @@ export class LeftSidebarComponent implements OnInit {
         this.getAllBrands();
       } else {
         this.dataService.getBrands().pipe(
-          map((data: any) => {
+          map((data) => {
             return data.filter((item: Brand) => categoryBrands.includes(Number(item.id)))
           }),
         ).subscribe(data => {
@@ -43,11 +43,11 @@ export class LeftSidebarComponent implements OnInit {
     })
   }
 
-  onBrandChangeHandler(brands: any) {
+  onBrandChangeHandler(brands: Brand[]) {
     this.dataService.filtersData$.next({ brands });
   }
 
-  onRatingChangeHandler(rating: any) {
+  onRatingChangeHandler(rating: number) {
     this.dataService.filtersData$.next({ rating });
   }
 }

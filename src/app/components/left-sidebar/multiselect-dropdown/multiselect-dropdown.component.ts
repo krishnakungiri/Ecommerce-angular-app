@@ -25,8 +25,8 @@ export class MultiselectDropdownComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.searchControl.valueChanges.subscribe((value: any) => {
-      this.filterBrands(value);
+    this.searchControl.valueChanges.subscribe((value: string | null) => {
+      this.filterBrands(value ?? "");
     });
   }
 
@@ -34,7 +34,7 @@ export class MultiselectDropdownComponent implements OnInit, OnChanges {
     this.filteredBrands = this.brands.filter(brand => brand.name.toLowerCase().includes(value ? value.toLowerCase() : ''));
   }
 
-  toggleBrandSelection(brand: any) {
+  toggleBrandSelection(brand: Brand) {
     const index = this.selectedBrands.indexOf(brand);
     if (index > -1) {
       this.selectedBrands.splice(index, 1);

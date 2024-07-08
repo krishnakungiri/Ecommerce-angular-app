@@ -1,13 +1,20 @@
 header {
-    background: #beb6b6;
+    background: #f1efef;
     color: #fff;
-    padding: 30px 0px 30px 30px;
-    min-height: 50px;
+    /* padding: 30px 0px 30px 30px; */
+    /* min-height: 50px; */
     border-bottom: #3c3c3c 2px solid;
 }
 
 header img {
-    max-height: 50px;
-    width: 200px;
+    /* max-height: 50px;
+    width: 200px; */
+    height: 60px;
+    width: 180px;
+    padding: 10px;
     filter: contrast(3.5);
+}
+
+.container img:hover {
+    cursor: pointer;
 }
