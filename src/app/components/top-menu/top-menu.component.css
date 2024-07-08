@@ -60,3 +60,22 @@ li:hover {
     font-size: 14px;
     font-weight: bold;
 }
+
+/* ##################  */
+
+.cart-wishlist {
+    display: flex;
+    position: relative;
+    /* display: inline-block; */
+    font-size: 24px;
+    gap: 15px;
+}
+
+.wishlist-icon {
+    font-size: 35px;
+}
+
+.wishlist-icon:hover {
+    background-color: #beb6b6;
+    cursor: pointer;
+}

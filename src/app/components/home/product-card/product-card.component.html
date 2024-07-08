@@ -41,7 +41,7 @@
         <p class="product-description">{{ product.description }}</p>
         <div class="cart-wishlist">
             <button (click)="addToCart(product)">Add to Cart</button>
-            <button>Wishlist <i class="fas fa-heart" style="color: red;"></i> </button>
+            <button (click)="addToWishlist(product)">Wishlist <i class="fas fa-heart" style="color: red;"></i> </button>
         </div>
     </div>
 </div>

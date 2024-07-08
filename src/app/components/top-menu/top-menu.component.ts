@@ -44,7 +44,11 @@ export class TopMenuComponent implements OnInit {
     return this.selectedCategory === category
   }
 
-  redirectToCart() {
+  redirectToCart(): void {
     this.router.navigate(['/cart']);
+  }
+
+  redirectToWishlist(): void {
+    this.router.navigate(['/wishlist']);
   }
 }
