@@ -1,6 +1,6 @@
+<h1>Your Cart</h1>
 <div class="cart-container">
     <div class="cart-page">
-        <h1>Your Cart</h1>
         <div class="cart-items">
             <div class="cart-product-card" *ngFor="let product of cartProducts">
                 <div class="product-image">
@@ -14,9 +14,16 @@
                         <button (click)="decreaseQuantity(product)">-</button>
                         <span>{{ product.quantity }}</span>
                         <button (click)="increaseQuantity(product)">+</button>
+                        <button (click)="removeFromCart(product)">Remove</button>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="cart-checkout">
+        <h2>Price Details</h2>
+        <div class="total">
+            <h3>Total ({{cartCount}} items) : {{subTotal}}</h3>
         </div>
     </div>
 </div>

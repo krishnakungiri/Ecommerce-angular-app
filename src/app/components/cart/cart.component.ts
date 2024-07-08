@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { CartService } from '../../services/cart.service';
+import { CartProduct } from '../../models/products-data.interface';
 
 @Component({
   selector: 'app-cart',
@@ -9,31 +11,38 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
-export class CartComponent {
-  public cartSubject = new BehaviorSubject<any[]>(this.loadCart());
-  cart$ = this.cartSubject.asObservable();
+export class CartComponent implements OnInit {
+  cartProducts: any[] = [];
+  cartCount!: number;
+  subTotal!: number;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
-  private loadCart(): any[] {
-    const savedCart = localStorage.getItem('cartProducts');
-    return savedCart ? JSON.parse(savedCart) : [];
+  ngOnInit(): void {
+    this.cartService.cart$.subscribe(products => {
+      this.cartProducts = products;
+      this.cartCount = products.length;
+      this.subTotal = this.getSubTotal();
+    })
   }
 
-  cartProducts = [
-    // Sample products
-    { id: 1, name: 'Samsung', price: '$500', rating: 4, description: 'Samsung Galaxy', image: 'path-to-image', quantity: 1 },
-    { id: 2, name: 'Apple', price: '$1000', rating: 5, description: 'Apple iPhone', image: 'path-to-image', quantity: 1 },
-    // Add more products as needed
-  ];
-
-  increaseQuantity(product: any): void {
-    product.quantity++;
+  getSubTotal(): number {
+    let total = this.cartProducts.reduce((acc, product) => {
+      return acc + (product.price * product.quantity);
+    }, 0);
+    return total
   }
 
-  decreaseQuantity(product: any): void {
-    if (product.quantity > 1) {
-      product.quantity--;
-    }
+  increaseQuantity(product: CartProduct): void {
+    this.cartService.updateQuantity(product, product.quantity + 1);
   }
+
+  decreaseQuantity(product: CartProduct): void {
+    this.cartService.updateQuantity(product, product.quantity - 1);
+  }
+
+  removeFromCart(product: CartProduct): void {
+    this.cartService.removeFromCart(product);
+  }
+
 }
