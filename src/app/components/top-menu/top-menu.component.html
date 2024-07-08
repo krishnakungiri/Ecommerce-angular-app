@@ -1,7 +1,15 @@
 <nav>
-    <ul>
-        <li *ngFor=" let category of categories" [ngClass]="{'my_class': isSelected(category)}"
-            (click)="selectItem(category)">
-            {{category.name}}</li>
-    </ul>
+    <div class="nav-container">
+        <ul>
+            <li *ngFor=" let category of categories" [ngClass]="{'selected-category': isSelected(category)}"
+                (click)="selectItem(category)">
+                {{category.name}}</li>
+        </ul>
+    </div>
+    <div class="cart" (click)="redirectToCart()">
+        <span class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </span>
+        <span class="cart-count" *ngIf="cartCount">{{cartCount}}</span>
+    </div>
 </nav>

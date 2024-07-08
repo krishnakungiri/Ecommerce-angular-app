@@ -24,3 +24,7 @@ export interface Product {
     brandId: number;
     image: string;
 }
+
+export interface CartProduct extends Product {
+    quantity: number;
+}
