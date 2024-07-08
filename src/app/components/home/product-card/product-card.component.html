@@ -33,13 +33,14 @@
             <span class="product-rating">
                 Rating:
                 <ng-container *ngFor="let star of getStarsArray(product.rating)">
+                    <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
                     <i class="fa fa-star" aria-hidden="true"></i>
                 </ng-container>
             </span>
         </div>
         <p class="product-description">{{ product.description }}</p>
         <div class="cart-wishlist">
-            <button (click)="addToCart">Add to Cart</button>
+            <button (click)="addToCart(product)">Add to Cart</button>
             <button>Wishlist <i class="fas fa-heart" style="color: red;"></i> </button>
         </div>
     </div>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { Category, FiltersData } from '../models/products-data.interface';
+import { Brand, Category, FiltersData, Product } from '../models/products-data.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +14,15 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/products`);
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}/products`);
   }
 
-  getBrands(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/brands`);
+  getBrands(): Observable<Brand[]> {
+    return this.http.get<Brand[]>(`${this.apiUrl}/brands`);
   }
 
-  getCategories(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/categories`);
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.apiUrl}/categories`);
   }
 }
