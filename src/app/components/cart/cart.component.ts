@@ -12,7 +12,7 @@ import { CartProduct } from '../../models/products-data.interface';
   styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
-  cartProducts: any[] = [];
+  cartProducts: CartProduct[] = [];
   cartCount!: number;
   subTotal!: number;
 

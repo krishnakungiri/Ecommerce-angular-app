@@ -12,7 +12,7 @@ import { CartService } from '../../../services/cart.service';
   styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
-  @Input("product") product: any
+  @Input("product") product!: Product
 
   constructor(private cartService: CartService) { }
 

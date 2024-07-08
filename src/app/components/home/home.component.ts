@@ -45,22 +45,18 @@ export class HomeComponent implements OnInit {
 
   getFilteredProducts(filters: FiltersData): Product[] {
     const { category, brands, price, rating } = filters
-    if (filters.category) {
-      return this.products.filter((product: Product): any => {
-        if (product.categoryId == filters.category?.id) {
-          return product
-        }
-      })
+    if (category) {
+      return this.products.filter((product: Product) => product.categoryId == category?.id)
     }
-    if (filters.brands?.length) {
+
+    if (brands?.length) {
       return this.products.filter((product: Product) => {
-        return filters.brands?.some((brand: any) => brand.id == product.brandId);
+        return brands?.some((brand: Brand) => brand.id == product.brandId);
       });
     }
 
-    if (filters.rating) {
-      let rating = Math.floor(filters.rating);
-      return this.products.filter((product: Product) => Math.floor(product.rating) == rating)
+    if (rating) {
+      return this.products.filter((product: Product) => Math.floor(product.rating) == Math.floor(rating))
     }
 
     if (price?.length) {

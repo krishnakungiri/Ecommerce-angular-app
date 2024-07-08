@@ -6,19 +6,19 @@ import { CartProduct, Product } from '../models/products-data.interface';
   providedIn: 'root'
 })
 export class CartService {
-  private cartSubject = new BehaviorSubject<any[]>(this.loadCart());
+  private cartSubject = new BehaviorSubject<CartProduct[]>(this.loadCart());
   cart$ = this.cartSubject.asObservable();
 
-  loadCart(): any[] {
+  loadCart(): CartProduct[] {
     const savedCart = localStorage.getItem('cartProducts');
     return savedCart ? JSON.parse(savedCart) : [];
   }
 
-  saveCart(cart: any[]): void {
+  saveCart(cart: CartProduct[]): void {
     localStorage.setItem('cartProducts', JSON.stringify(cart));
   }
 
-  getCart(): any[] {
+  getCart(): CartProduct[] {
     return this.cartSubject.value;
   }
 
