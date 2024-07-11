@@ -34,10 +34,11 @@ export class TopMenuComponent implements OnInit {
     })
   }
 
-  selectItem(item: Category) {
+  onSelectItem(item: Category) {
     this.selectedCategory = item
     this.dataService.categoryBrandsBehSubject$.next(item.brands);
-    this.dataService.filtersData$.next({ category: item })
+    this.dataService.filtersData$.next({ category: item }); //Not useful in after api filters implementation
+    this.dataService.categoryFilterSubject$.next(item.id);
   }
 
   isSelected(category: Category): boolean {

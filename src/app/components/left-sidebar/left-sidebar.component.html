@@ -4,5 +4,10 @@
         (selectedBrandsChange)="onBrandChangeHandler($event)"></app-multiselect-dropdown>
 
     <app-rating-filter (ratingChange)="onRatingChangeHandler($event)"></app-rating-filter>
-    <app-price-filter></app-price-filter>
+    <app-price-filter (selectedPriceRange)="onSelectPriceRange($event)"></app-price-filter>
+
+    <div class="apply-filter-button">
+        <button class="apply-filter" (click)="onApplyFilters()">Apply Filters</button>
+        <button class="clear-filter" (click)="onClearFilters()">Clear Filters</button>
+    </div>
 </div>
