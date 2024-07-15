@@ -4,3 +4,33 @@
     border-radius: 8px;
     margin: 16px 0;
 }
+
+.apply-filter-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.apply-filter-button button {
+    margin-top: 20px;
+    background-color: #023864;
+    color: white;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+    width: 49%;
+    border-radius: 4px;
+    /* font-size: 1em; */
+    transition: background-color 0.3s ease;
+}
+
+.apply-filter-button .apply-filter:hover {
+    background-color: #f1efef;
+    color: #023864;
+    border: 1px solid #023864;
+}
+
+.apply-filter-button .clear-filter:hover {
+    background-color: #f1efef;
+    color: #023864;
+    border: 0.5px solid #023864;
+}

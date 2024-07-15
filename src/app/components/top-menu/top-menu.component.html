@@ -18,7 +18,7 @@
     <div class="nav-container">
         <ul>
             <li *ngFor=" let category of categories" [ngClass]="{'selected-category': isSelected(category)}"
-                (click)="selectItem(category)">
+                (click)="onSelectItem(category)">
                 {{category.name}}</li>
         </ul>
     </div>

@@ -27,17 +27,16 @@ export class TopMenuComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getCategories().subscribe((data) => {
       this.categories = data
-      // this.selectedCategory = data[0]
     })
     this.cartService.cart$.subscribe(products => {
       this.cartCount = products.length
     })
   }
 
-  selectItem(item: Category) {
+  onSelectItem(item: Category) {
     this.selectedCategory = item
     this.dataService.categoryBrandsBehSubject$.next(item.brands);
-    this.dataService.filtersData$.next({ category: item })
+    this.dataService.categoryFilterSubject$.next(item.id);
   }
 
   isSelected(category: Category): boolean {

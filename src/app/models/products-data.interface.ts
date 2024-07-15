@@ -14,6 +14,18 @@ export interface FiltersData {
     price?: [number, number]
 }
 
+export interface FiltersDataAPI {
+    brand?: number[];
+    category?: number;
+    rating?: number;
+    price?: { gt: number, lt: number }
+}
+
+export interface IpriceRangeFilter {
+    priceMinValue: number,
+    priceMaxValue: number
+}
+
 export interface Product {
     id: number;
     name: string;
