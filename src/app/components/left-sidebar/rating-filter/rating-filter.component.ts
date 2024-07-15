@@ -11,15 +11,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class RatingFilterComponent {
   @Output() ratingChange = new EventEmitter<number>();
 
-  id!: number
-  ratings = [1.5, 2.5, 3.5, 4.5]
+  ratings = [1.5, 2.5, 3.5, 4.5];
+  selectedRating: number | null = null;
 
   selectRating(rating: number) {
-    this.id = rating
+    this.selectedRating = rating;
     this.ratingChange.emit(rating);
   }
 
-  isSelected(id: number): boolean {
-    return this.id == id
+  isSelected(rating: number): boolean {
+    return this.selectedRating == rating;
   }
 }

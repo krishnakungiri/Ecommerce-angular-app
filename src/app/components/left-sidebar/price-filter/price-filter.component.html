@@ -14,8 +14,8 @@
     </div>
 
     <div class="price-box">
-        <input type="number" [(ngModel)]="priceMinValue">
-        <input type="number" [(ngModel)]="priceMaxValue">
-        <button (click)="onPriceChange()">Apply</button>
+        <input type="number" [(ngModel)]="priceMinValue" (keyup)="onPriceChange()">
+        <input type="number" [(ngModel)]="priceMaxValue" (keyup)="onPriceChange()">
+        <!-- <button (click)="onPriceChange()">Apply</button> -->
     </div>
 </div>

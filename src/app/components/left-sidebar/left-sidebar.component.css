@@ -12,7 +12,7 @@
 
 .apply-filter-button button {
     margin-top: 20px;
-    background-color: #339dbd;
+    background-color: #023864;
     color: white;
     border: none;
     padding: 8px 8px;
@@ -25,12 +25,12 @@
 
 .apply-filter-button .apply-filter:hover {
     background-color: #f1efef;
-    color: #339dbd;
-    border: 1px solid #339dbd;
+    color: #023864;
+    border: 1px solid #023864;
 }
 
 .apply-filter-button .clear-filter:hover {
     background-color: #f1efef;
-    color: #339dbd;
-    border: 0.5px solid #339dbd;
+    color: #023864;
+    border: 0.5px solid #023864;
 }

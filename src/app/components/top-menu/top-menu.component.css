@@ -1,7 +1,7 @@
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: #339dbd;
+    background-color: #023864;
     padding: 0px 18px;
 }
 
@@ -20,18 +20,19 @@ li {
     margin: 0 10px;
     text-decoration: none;
     font-family: serif;
-    color: #333;
+    color: #f1efef;
     padding: 10px 15px;
     display: inline-block;
 }
 
 li:hover {
-    background-color: #beb6b6;
+    background-color: #f1efef;
     cursor: pointer;
+    color: #023864;
 }
 
 .selected-category {
-    background-color: #beb6b6;
+    background-color: #f1efef;
 }
 
 .cart {
@@ -61,12 +62,9 @@ li:hover {
     font-weight: bold;
 }
 
-/* ##################  */
-
 .cart-wishlist {
     display: flex;
     position: relative;
-    /* display: inline-block; */
     font-size: 24px;
     gap: 15px;
 }

@@ -1,13 +1,14 @@
 .product-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #3c3c3c;
-    border-radius: 8px;
+    /* border: 1px solid #023864; */
+    /* border-radius: 8px; */
     overflow: hidden;
     margin: 10px;
     width: 285px;
     height: 400px;
     justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .product-image {
@@ -69,7 +70,7 @@
 }
 
 .cart-wishlist button {
-    background-color: #339dbd;
+    background-color: #023864;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -81,5 +82,7 @@
 }
 
 .cart-wishlist button:hover {
-    background-color: #0056b3;
+    background-color: #f1efef;
+    color: #023864;
+    border: 0.5px solid #023864;
 }

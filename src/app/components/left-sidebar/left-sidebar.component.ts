@@ -16,7 +16,9 @@ import { IpriceRangeFilter } from '../../models/products-data.interface';
 })
 export class LeftSidebarComponent implements OnInit {
   @Output() selectedFilters = new EventEmitter<FiltersDataAPI>();
-  @ViewChild(MultiselectDropdownComponent) multiselectDropdownComponent!: MultiselectDropdownComponent;
+  @ViewChild(MultiselectDropdownComponent) brandDropdownComponent!: MultiselectDropdownComponent;
+  @ViewChild(RatingFilterComponent) ratingFilterComponent!: RatingFilterComponent;
+  @ViewChild(PriceFilterComponent) priceFilterComponent!: PriceFilterComponent;
 
   allbrands!: Brand[];
   filters: FiltersDataAPI = {}
@@ -53,16 +55,10 @@ export class LeftSidebarComponent implements OnInit {
   }
 
   onBrandChangeHandler(brands: Brand[]) {
-    // this.dataService.filtersData$.next({ brands });
-    if (this.filters.brand?.length) {
-      this.filters.brand.push(brands[0].id)
-    } else {
-      this.filters['brand'] = [brands[0].id]
-    }
+    this.filters.brand = this.brandDropdownComponent.selectedBrands.map((brand: Brand) => brand.id)
   }
 
   onRatingChangeHandler(rating: number): void {
-    // this.dataService.filtersData$.next({ rating });
     this.filters.rating = rating
   }
 
@@ -74,8 +70,16 @@ export class LeftSidebarComponent implements OnInit {
     this.applyFilters();
   }
   onClearFilters(): void {
+    // Clears all filters from api filter payload
     this.filters = {}
-    this.multiselectDropdownComponent.selectedBrands = [];
+    // Clears brand selction
+    this.brandDropdownComponent.selectedBrands = [];
+    // Clears rating selection
+    this.ratingFilterComponent.selectedRating = null
+    // Sets Default price range
+    let defaultPriceRange = this.priceFilterComponent.defaultPriceRange
+    this.priceFilterComponent.priceMinValue = defaultPriceRange.minPrice
+    this.priceFilterComponent.priceMaxValue = defaultPriceRange.maxPrice
     this.applyFilters();
   }
 

@@ -27,7 +27,6 @@ export class TopMenuComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getCategories().subscribe((data) => {
       this.categories = data
-      // this.selectedCategory = data[0]
     })
     this.cartService.cart$.subscribe(products => {
       this.cartCount = products.length
@@ -37,7 +36,6 @@ export class TopMenuComponent implements OnInit {
   onSelectItem(item: Category) {
     this.selectedCategory = item
     this.dataService.categoryBrandsBehSubject$.next(item.brands);
-    this.dataService.filtersData$.next({ category: item }); //Not useful in after api filters implementation
     this.dataService.categoryFilterSubject$.next(item.id);
   }
 

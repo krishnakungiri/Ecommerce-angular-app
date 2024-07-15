@@ -10,7 +10,6 @@ export class DataService {
   // private apiUrl = 'http://localhost:3000';
   private apiUrl = 'http://localhost:5000/api';
 
-  public filtersData$ = new Subject<FiltersData>;
   public categoryBrandsBehSubject$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
   public categoryFilterSubject$: Subject<number> = new Subject<number>;
   // categoryFilter$ = this.categoryFilterSubject.asObservable();
