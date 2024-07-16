@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "jest --coverage"
+    "test": "jest",
+    "test:single": "jest --testPathPattern=",
+    "test-watch": "jest --watch",
+    "test-coverage": "jest --coverage",
+    "test-report":"jest --coverage --coverageReporters='text-summary'"
   },
   "private": true,
   "dependencies": {
