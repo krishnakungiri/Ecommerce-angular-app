@@ -8,7 +8,7 @@ import { Brand, Category, FiltersData, FiltersDataAPI, Product } from '../models
 })
 export class DataService {
   // private apiUrl = 'http://localhost:3000';
-  private apiUrl = 'http://localhost:5000/api';
+  apiUrl = 'http://localhost:5000/api';
 
   public categoryBrandsBehSubject$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
   public categoryFilterSubject$: Subject<number> = new Subject<number>;
@@ -17,7 +17,8 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getProducts(filters: FiltersDataAPI): Observable<Product[]> {
-    // return this.http.get<Product[]>(`${this.apiUrl}/products`);
+    console.log("getting called ***");
+
     let params = new HttpParams();
 
     if (filters.category !== undefined && filters.category) {
