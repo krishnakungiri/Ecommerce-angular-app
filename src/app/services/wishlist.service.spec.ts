@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { WishlistService } from './wishlist.service';
-import { Product } from '../models/products-data.interface';
+import { Product } from '../../models/products-data.interface';
 
 describe('WishlistService', () => {
   let service: WishlistService;
