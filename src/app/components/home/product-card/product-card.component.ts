@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { CartProduct, Product } from '../../../models/products-data.interface';
 import { CartComponent } from '../../cart/cart.component';
-import { CartService } from '../../../services/cart.service';
+import { CartService } from '../../../services/cart/cart.service';
 import { WishlistService } from '../../../services/wishlist/wishlist.service';
 
 @Component({
@@ -10,15 +10,15 @@ import { WishlistService } from '../../../services/wishlist/wishlist.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.css'
+  styleUrl: './product-card.component.css',
 })
 export class ProductCardComponent {
-  @Input("product") product!: Product
+  @Input('product') product!: Product;
 
   constructor(
     private cartService: CartService,
     private wishlistService: WishlistService
-  ) { }
+  ) {}
 
   addToCart(product: Product): void {
     this.cartService.addToCart(product);

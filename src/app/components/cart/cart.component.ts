@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart/cart.service';
 import { CartProduct } from '../../models/products-data.interface';
 
 @Component({
@@ -9,28 +9,28 @@ import { CartProduct } from '../../models/products-data.interface';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit {
   cartProducts: CartProduct[] = [];
   cartCount!: number;
   subTotal!: number;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartService.cart$.subscribe(products => {
+    this.cartService.cart$.subscribe((products) => {
       this.cartProducts = products;
       this.cartCount = products.length;
       this.subTotal = this.getSubTotal();
-    })
+    });
   }
 
   getSubTotal(): number {
     let total = this.cartProducts.reduce((acc, product) => {
-      return acc + (product.price * product.quantity);
+      return acc + product.price * product.quantity;
     }, 0);
-    return total
+    return total;
   }
 
   increaseQuantity(product: CartProduct): void {
@@ -44,5 +44,4 @@ export class CartComponent implements OnInit {
   removeFromCart(product: CartProduct): void {
     this.cartService.removeFromCart(product);
   }
-
 }

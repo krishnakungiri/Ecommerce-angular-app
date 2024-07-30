@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CartProduct, Product } from '../models/products-data.interface';
+import { CartProduct, Product } from '../../models/products-data.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   private cartSubject = new BehaviorSubject<CartProduct[]>(this.loadCart());
@@ -24,7 +24,7 @@ export class CartService {
 
   addToCart(product: Product): void {
     const cart = this.getCart();
-    const existingProduct = cart.find(item => item.id === product.id);
+    const existingProduct = cart.find((item) => item.id === product.id);
     if (existingProduct) {
       existingProduct.quantity += 1;
     } else {
@@ -36,18 +36,18 @@ export class CartService {
 
   updateQuantity(product: CartProduct, quantity: number): void {
     const cart = this.getCart();
-    const productToUpdate = cart.find(item => item.id == product.id)
+    const productToUpdate = cart.find((item) => item.id == product.id);
     if (productToUpdate && quantity > 0) {
-      productToUpdate.quantity = quantity
+      productToUpdate.quantity = quantity;
       this.saveCart(cart);
       this.cartSubject.next(cart);
     } else if (productToUpdate && quantity === 0) {
-      this.removeFromCart(product)
+      this.removeFromCart(product);
     }
   }
 
   removeFromCart(product: CartProduct): void {
-    const cart = this.getCart().filter(item => item.id !== product.id)
+    const cart = this.getCart().filter((item) => item.id !== product.id);
     this.cartSubject.next(cart);
     this.saveCart(cart);
   }
