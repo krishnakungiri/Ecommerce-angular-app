@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { CartProduct, Product } from '../../../models/products-data.interface';
 import { CartComponent } from '../../cart/cart.component';
 import { CartService } from '../../../services/cart.service';
-import { WishlistService } from '../../../services/wishlist.service';
+import { WishlistService } from '../../../services/wishlist/wishlist.service';
 
 @Component({
   selector: 'app-product-card',

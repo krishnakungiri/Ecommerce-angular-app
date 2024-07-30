@@ -30,15 +30,16 @@ describe('WishlistService', () => {
     },
   ];
   const product: Product = {
-    "id": 6,
-    "name": "OnePlus 9",
-    "price": 10000,
-    "rating": 2,
-    "categoryId": 1,
-    "description": "OnePlus smartphone with fast performance.",
-    "brandId": 6,
-    "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/l/7/i/-original-imaggceejthk79fq.jpeg?q=70"
-  }
+    id: 6,
+    name: 'OnePlus 9',
+    price: 10000,
+    rating: 2,
+    categoryId: 1,
+    description: 'OnePlus smartphone with fast performance.',
+    brandId: 6,
+    image:
+      'https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/l/7/i/-original-imaggceejthk79fq.jpeg?q=70',
+  };
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [WishlistService],
@@ -48,7 +49,7 @@ describe('WishlistService', () => {
 
   const getDataFromWishlist = () => {
     return localStorage.getItem('wishlistProducts');
-  }
+  };
 
   afterEach(() => {
     localStorage.clear();
@@ -79,7 +80,6 @@ describe('WishlistService', () => {
     const existingWishlist = service.getWishlist();
     service.removeFromWishlist(existingWishlist[0]);
 
-    expect(getDataFromWishlist()).toEqual(JSON.stringify([]))
-  })
-
+    expect(getDataFromWishlist()).toEqual(JSON.stringify([]));
+  });
 });

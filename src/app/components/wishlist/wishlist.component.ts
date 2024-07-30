@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/products-data.interface';
-import { WishlistService } from '../../services/wishlist.service';
+import { WishlistService } from '../../services/wishlist/wishlist.service';
 
 @Component({
   selector: 'app-wishlist',
