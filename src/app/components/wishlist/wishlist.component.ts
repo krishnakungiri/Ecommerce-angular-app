@@ -8,22 +8,20 @@ import { WishlistService } from '../../services/wishlist/wishlist.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './wishlist.component.html',
-  styleUrl: './wishlist.component.css'
+  styleUrl: './wishlist.component.css',
 })
 export class WishlistComponent implements OnInit {
-
   wishlistProducts!: Product[];
 
-  constructor(private wishlistService: WishlistService) { }
+  constructor(private wishlistService: WishlistService) {}
 
   ngOnInit(): void {
-    this.wishlistService.wishlist$.subscribe(products => {
-      this.wishlistProducts = products
-    })
+    this.wishlistService.wishlist$.subscribe((products) => {
+      this.wishlistProducts = products;
+    });
   }
 
   removeFromWishlist(product: Product): void {
-    this.wishlistService.removeFromWishlist(product)
+    this.wishlistService.removeFromWishlist(product);
   }
-
 }

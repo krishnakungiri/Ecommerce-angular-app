@@ -19,7 +19,7 @@ export class WishlistService {
     //-------getting wishlist from NGRX store
 
     this.wishlistStore.select('wishlist').subscribe((data) => {
-      console.log('dataCounter: ', data);
+      console.log('wishlist data from store');
 
       this.wishlistSubject.next(data.wishlist);
     });
