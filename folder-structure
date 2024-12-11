@@ -1,0 +1,29 @@
+src 
+    core   
+    
+    feature
+        cart 
+            components
+                popup
+                snackbar
+            facades
+            models
+            pages
+
+            services
+            store 
+                actions
+                  cart.action.ts
+                  cart-details.action.ts 
+                  index.ts 
+                effects
+                  cart.effect.ts
+                  index.ts
+                
+                selectors
+                index.ts 
+    shared
+
+    helpers    
+    utilities
+    interceptors

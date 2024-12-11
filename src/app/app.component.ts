@@ -27,4 +27,19 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'Ecommerce-app';
 
+  abc = {
+    "params":
+    {
+      "cloneFrom":
+        { "cloneFrom": null, "encoder": {}, "map": null, "updates": null },
+      "encoder": {},
+      "map": null,
+      "updates": [
+        { "op": "s", "param": "category", "value": "1" },
+        { "op": "s", "param": "brand", "value": "[1]" },
+        { "op": "s", "param": "rating", "value": "5" },
+        { "op": "s", "param": "price", "value": "{\"gt\":100,\"lt\":1000}" }]
+    }
+  }
+
 }
